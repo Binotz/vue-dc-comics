@@ -8,8 +8,8 @@
         <!-- menu -->
         <div class="menu-list">
             <ul>
-                <li v-for="link,index in menuList" :key="index">
-                    <a :href="link.link" :class="{'current': link.currentPage}">
+                <li v-for="link,index in menuList" :key="index" :class="{'current': link.currentPage}">
+                    <a :href="link.link">
                         {{ link.text.toUpperCase() }}
                     </a>
                 </li>
@@ -75,16 +75,32 @@ export default {
 <style lang="scss" scoped>
     @import '../style/variables.scss';
 
+    header {
+        min-height: $menu-height;
+    }
     .container{
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 1rem 0;
+        height: 100%;
     }
     ul{
         display: flex;
+        align-items: center;
+        height: 100%;
         li{
             margin-left: 1.5rem;
+            height: $menu-height;
+            display: flex;
+            align-items: center;
+            &.current{
+                border-bottom: 5px solid $primary-color;
+                //Fix the border bottom offset
+                a{
+                    color: $primary-color;
+                    margin-top: 5px;
+                }
+            }
         }
     }
     .menu-list{
