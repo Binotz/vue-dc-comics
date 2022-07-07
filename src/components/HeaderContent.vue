@@ -8,7 +8,7 @@
         <!-- menu -->
         <div class="menu-list">
             <ul>
-                <li v-for="link,index in menuList" :key="index" :class="{'current': link.currentPage}">
+                <li v-for="link,index in menuList" :key="index" :class="{'current': link.currentPage}" @click="setCurrentPage(index)">
                     <a :href="link.link">
                         {{ link.text.toUpperCase() }}
                     </a>
@@ -24,50 +24,68 @@ export default {
     name:"HeaderContent",
     data(){
         return{
+            currentPage: 0,
             menuList:[
                 {
                     text: 'characters',
                     link: '#',
                     currentPage: false,
-                },                {
+                },                
+                {
                     text: 'comics',
                     link: '#',
                     currentPage: true,
-                },                {
+                },                
+                {
                     text: 'movies',
                     link: '#',
                     currentPage: false,
-                },                {
+                },                
+                {
                     text: 'tv',
                     link: '#',
                     currentPage: false,
-                },                {
+                },                
+                {
                     text: 'games',
                     link: '#',
                     currentPage: false,
-                },                {
+                },                
+                {
                     text: 'collectibles',
                     link: '#',
                     currentPage: false,
-                },                {
+                },                
+                {
                     text: 'videos',
                     link: '#',
                     currentPage: false,
-                },                {
+                },                
+                {
                     text: 'fans',
                     link: '#',
                     currentPage: false,
-                },                {
+                },                
+                {
                     text: 'news',
                     link: '#',
                     currentPage: false,
-                },                {
+                },                
+                {
                     text: 'shop',
                     link: '#',
                     currentPage: false,
                 },
             ],
         }
+    },
+    methods: {
+            setCurrentPage: function(index){
+                this.menuList.forEach((elem)=>{
+                    elem.currentPage = false;
+                });
+                this.menuList[index].currentPage = true;
+            }       
     }
 }
 </script>

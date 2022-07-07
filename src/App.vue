@@ -19,7 +19,6 @@ import CTAComponent from './components/CTAComponent.vue'
 import FooterTopComponent from './components/FooterTopComponent.vue'
 import FooterBottomComponent from './components/FooterBottomComponent.vue'
 
-
 export default {
   name: 'App',
   components: {

@@ -27,7 +27,6 @@ export default {
             margin-top: -80px;
             margin-bottom: 1rem;
             display: block;
-    
             object-position: 0px 80px;
         }
 
