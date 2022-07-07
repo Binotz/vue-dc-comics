@@ -1,10 +1,14 @@
 <template>
   <div id="app">
     <HeaderContent />
-    <MainComponent />
-    <CTAComponent />
-    <FooterTopComponent />
-    <FooterBottomComponent />
+    <main>
+      <MainComponent />
+      <CTAComponent />
+    </main>
+    <footer>
+      <FooterTopComponent />
+      <FooterBottomComponent />
+    </footer>
   </div>
 </template>
 
@@ -14,6 +18,7 @@ import MainComponent from './components/MainComponent.vue'
 import CTAComponent from './components/CTAComponent.vue'
 import FooterTopComponent from './components/FooterTopComponent.vue'
 import FooterBottomComponent from './components/FooterBottomComponent.vue'
+
 
 export default {
   name: 'App',

@@ -1,14 +1,21 @@
 <template>
   <section class="content">
-    <div class="container">
-    <span> Content Goes Here </span>
-  </div>
+    <JumbotronComponent />
+    <CurrentSeriesComponent />
   </section>
 </template>
 
 <script>
+
+import JumbotronComponent from './JumbotronComponent.vue'
+import CurrentSeriesComponent from './CurrentSeriesComponent.vue'
+
 export default {
-    name:"MainComponent"
+    name: "MainComponent",
+    components: { 
+      JumbotronComponent,
+      CurrentSeriesComponent 
+    }
 }
 </script>
 
@@ -17,6 +24,5 @@ export default {
     section{
         background-color: $secondary-color;
         color: white;
-        padding: 3rem;
     }
 </style>
